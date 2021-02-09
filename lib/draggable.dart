@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+class Draggbles extends StatefulWidget {
+  @override
+  _DragState createState() => _DragState();
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
+class _DragState extends State<Draggbles> {
   Color color1 = Colors.red;
   Color color2 = Colors.blue;
   Color targetwarna;
