@@ -17,12 +17,12 @@ class _CardxState extends State<Cardx> {
               Card(
                 child: Column(
                   children: <Widget>[
-                    Buildcard(Icons.adb, "Androib Box"),
-                    Buildcard(Icons.account_box, "Account Box"),
-                    Buildcard(Icons.adb, "Androib Box"),
-                    Buildcard(Icons.account_box, "Account Box"),
-                    Buildcard(Icons.adb, "Androib Box"),
-                    Buildcard(Icons.account_box, "Account Box"),
+                    buildcard(Icons.adb, "Androib Box"),
+                    buildcard(Icons.account_box, "Account Box"),
+                    buildcard(Icons.adb, "Androib Box"),
+                    buildcard(Icons.account_box, "Account Box"),
+                    buildcard(Icons.adb, "Androib Box"),
+                    buildcard(Icons.account_box, "Account Box"),
                   ],
                 ),
               )
@@ -33,7 +33,7 @@ class _CardxState extends State<Cardx> {
     );
   }
 
-  Card Buildcard(IconData iconData, String text) {
+  Card buildcard(IconData iconData, String text) {
     return Card(
       elevation: 5,
       child: Row(

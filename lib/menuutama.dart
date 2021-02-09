@@ -3,8 +3,6 @@ import 'package:bogor/gestureDectetor_AnimatedContainer.dart';
 import 'package:bogor/draggable.dart';
 import 'package:bogor/card.dart';
 
-import 'package:flutter/gestures.dart';
-
 import 'package:flutter/material.dart';
 
 class MenuUtama extends StatefulWidget {
