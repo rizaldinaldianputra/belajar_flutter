@@ -2,7 +2,7 @@ import 'package:bogor/appbarx.dart';
 import 'package:bogor/gestureDectetor_AnimatedContainer.dart';
 import 'package:bogor/draggable.dart';
 import 'package:bogor/card.dart';
-
+import 'package:bogor/textfield.dart';
 import 'package:flutter/material.dart';
 
 class MenuUtama extends StatefulWidget {
@@ -29,6 +29,19 @@ class _MenuUtamaState extends State<MenuUtama> {
                     mainAxisSpacing: 10,
                     crossAxisCount: 2,
                     children: <Widget>[
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TextFieldx()),
+                            );
+                          },
+                          child: Text('TextField'),
+                        ),
+                      ),
                       Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
