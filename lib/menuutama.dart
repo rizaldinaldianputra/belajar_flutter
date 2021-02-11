@@ -2,6 +2,7 @@ import 'package:bogor/appbarx.dart';
 import 'package:bogor/gestureDectetor_AnimatedContainer.dart';
 import 'package:bogor/draggable.dart';
 import 'package:bogor/card.dart';
+import 'package:bogor/opacity_card.dart';
 import 'package:bogor/textfield.dart';
 import 'package:bogor/responsive.dart';
 import 'package:flutter/material.dart';
@@ -97,8 +98,13 @@ class _MenuUtamaState extends State<MenuUtama> {
                       Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text('-'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Opacityx()));
+                          },
+                          child: Text('Card+Gradasi'),
                         ),
                       ),
                       Container(
