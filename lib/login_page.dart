@@ -1,3 +1,4 @@
+import 'package:bogor/menuutama.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -116,6 +117,13 @@ class _LoginState extends State<Login> {
                             child: Material(
                               color: Colors.transparent,
                               child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MenuUtama()),
+                                    );
+                                  },
                                   borderRadius: BorderRadius.circular(20),
                                   splashColor: Colors.blue,
                                   child: Center(
@@ -147,7 +155,6 @@ class _LoginState extends State<Login> {
                         FloatingActionButton(
                           onPressed: () {},
                           mini: true,
-                         
                           child: Image(
                             image: AssetImage('assets/google.png'),
                           ),

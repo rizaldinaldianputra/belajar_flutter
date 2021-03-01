@@ -15,7 +15,7 @@ class _AppBarxState extends State<AppBarx> {
             Icons.adb,
             color: Colors.white,
           ),
-          title: Text('Dashboard'),
+          title: Text('Gradient Appbar'),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.settings),
@@ -35,11 +35,7 @@ class _AppBarxState extends State<AppBarx> {
             ),
           ),
         ),
-        body: Container(
-          child: Image(
-            image: AssetImage('assets/bg.png'),
-          ),
-        ),
+        body: Container(),
       ),
     );
   }
