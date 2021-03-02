@@ -1,5 +1,7 @@
 import 'package:bogor/Appbar_PrefferedSized).dart';
 import 'package:bogor/AppBar_Gradasi.dart';
+import 'package:bogor/Audio.dart';
+import 'package:bogor/ClipPath.dart';
 import 'package:bogor/Gradient_Opacity.dart';
 import 'package:bogor/QR_Code.dart';
 import 'package:bogor/Tabbar.dart';
@@ -199,10 +201,22 @@ class _MenuUtamaState extends State<MenuUtama> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Gesture()),
+                        MaterialPageRoute(builder: (context) => Audioplay()),
                       );
                     },
-                    child: Text('Gesture Detector'),
+                    child: Text('Audio Player'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Clippath()),
+                      );
+                    },
+                    child: Text('Clipath'),
                   ),
                 ),
               ],
