@@ -3,6 +3,7 @@ import 'package:bogor/AppBar_Gradasi.dart';
 import 'package:bogor/Audio.dart';
 import 'package:bogor/ClipPath.dart';
 import 'package:bogor/Gradient_Opacity.dart';
+import 'package:bogor/POST.dart';
 import 'package:bogor/QR_Code.dart';
 import 'package:bogor/Tabbar.dart';
 import 'package:bogor/gestureDectetor_AnimatedContainer.dart';
@@ -43,6 +44,43 @@ class _MenuUtamaState extends State<MenuUtama> {
                       );
                     },
                     child: Text('TextField'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => GradientOpacity()),
+                      );
+                    },
+                    child: Text('GradientOpacity'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Audioplay()),
+                      );
+                    },
+                    child: Text('Audio Player'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Clippath()),
+                      );
+                    },
+                    child: Text('Clipath'),
                   ),
                 ),
                 Container(
@@ -171,7 +209,7 @@ class _MenuUtamaState extends State<MenuUtama> {
       ),
     );
 
-    Container menu2 = Container(
+    Container restfull = Container(
       child: CustomScrollView(
         primary: false,
         slivers: <Widget>[
@@ -188,35 +226,10 @@ class _MenuUtamaState extends State<MenuUtama> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => GradientOpacity()),
+                        MaterialPageRoute(builder: (context) => PostDart()),
                       );
                     },
-                    child: Text('GradientOpacity'),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Audioplay()),
-                      );
-                    },
-                    child: Text('Audio Player'),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Clippath()),
-                      );
-                    },
-                    child: Text('Clipath'),
+                    child: Text('POST '),
                   ),
                 ),
               ],
@@ -232,12 +245,11 @@ class _MenuUtamaState extends State<MenuUtama> {
       tabs: <Widget>[
         Tab(
           icon: Icon(Icons.comment),
-          text: 'Text',
+          text: 'Menu 1',
         ),
         Tab(
-          child: Image(
-            image: AssetImage('assets/google.png'),
-          ),
+          icon: Icon(Icons.network_cell),
+          text: 'RestFull',
         ),
       ],
     );
@@ -274,7 +286,7 @@ class _MenuUtamaState extends State<MenuUtama> {
                 child: menu1,
               ),
               Center(
-                child: menu2,
+                child: restfull,
               ),
             ],
           ),

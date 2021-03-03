@@ -1,4 +1,4 @@
-import 'package:bogor/login_page.dart';
+import 'package:bogor/menuutama.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +13,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: MenuUtama(),
     );
   }
 }
