@@ -102,7 +102,11 @@ class _LoginState extends State<Login> {
                     alignment: Alignment.bottomRight,
                     child: Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 20, 20),
-                      child: Text('Forget Password'),
+                      child: Text(
+                        'Forget Password',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                   Container(
@@ -161,6 +165,20 @@ class _LoginState extends State<Login> {
                         )
                       ],
                     ),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.fromLTRB(200, 0, 0, 30),
+                      ),
+                      Text(
+                        'Created An Account.',
+                        style: TextStyle(
+                          color: Colors.orange,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),

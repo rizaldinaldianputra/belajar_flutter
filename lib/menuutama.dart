@@ -2,9 +2,12 @@ import 'package:bogor/Appbar_PrefferedSized).dart';
 import 'package:bogor/AppBar_Gradasi.dart';
 import 'package:bogor/Audio.dart';
 import 'package:bogor/ClipPath.dart';
+import 'package:bogor/GET.dart';
+import 'package:bogor/GET_Banyak.dart';
 import 'package:bogor/Gradient_Opacity.dart';
 import 'package:bogor/POST.dart';
 import 'package:bogor/QR_Code.dart';
+import 'package:bogor/Switch&AnimatedSwitcher.dart';
 import 'package:bogor/Tabbar.dart';
 import 'package:bogor/gestureDectetor_AnimatedContainer.dart';
 import 'package:bogor/draggable.dart';
@@ -14,6 +17,8 @@ import 'package:bogor/textfield.dart';
 import 'package:bogor/Hero_CliapArt.dart';
 import 'package:bogor/responsive.dart';
 import 'package:flutter/material.dart';
+
+import 'AnimatedPaddingWidget.dart';
 
 class MenuUtama extends StatefulWidget {
   @override
@@ -202,6 +207,30 @@ class _MenuUtamaState extends State<MenuUtama> {
                     child: Text('Media Query'),
                   ),
                 ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SwitchAnimated()));
+                    },
+                    child: Text('SwitchAnimated'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Animatedpadding()));
+                    },
+                    child: Text('Animatedpadding'),
+                  ),
+                ),
               ],
             ),
           ),
@@ -230,6 +259,30 @@ class _MenuUtamaState extends State<MenuUtama> {
                       );
                     },
                     child: Text('POST '),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => GetDart()),
+                      );
+                    },
+                    child: Text('GET '),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => GetBanyak()),
+                      );
+                    },
+                    child: Text('GET DATA BANYAK'),
                   ),
                 ),
               ],
