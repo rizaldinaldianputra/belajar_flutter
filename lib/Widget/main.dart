@@ -1,4 +1,4 @@
-import 'package:bogor/login_page.dart';
+import 'package:bogor/Widget/login_page.dart';
 
 import 'package:flutter/material.dart';
 

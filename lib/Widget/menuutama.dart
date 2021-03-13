@@ -1,24 +1,26 @@
-import 'package:bogor/Appbar_PrefferedSized).dart';
-import 'package:bogor/AppBar_Gradasi.dart';
-import 'package:bogor/Audio.dart';
-import 'package:bogor/ClipPath.dart';
-import 'package:bogor/GET.dart';
-import 'package:bogor/GET_Banyak.dart';
-import 'package:bogor/Gradient_Opacity.dart';
-import 'package:bogor/POST.dart';
-import 'package:bogor/QR_Code.dart';
-import 'package:bogor/Switch&AnimatedSwitcher.dart';
-import 'package:bogor/Tabbar.dart';
-import 'package:bogor/gestureDectetor_AnimatedContainer.dart';
-import 'package:bogor/draggable.dart';
-import 'package:bogor/card.dart';
-import 'package:bogor/opacity_card.dart';
-import 'package:bogor/textfield.dart';
-import 'package:bogor/Hero_CliapArt.dart';
-import 'package:bogor/responsive.dart';
+import 'package:bogor/Widget/Appbar_PrefferedSized).dart';
+import 'package:bogor/Widget/AppBar_Gradasi.dart';
+import 'package:bogor/Widget/Audio.dart';
+import 'package:bogor/Widget/ClipPath.dart';
+import 'package:bogor/Widget/GET.dart';
+import 'package:bogor/Widget/GET_Banyak.dart';
+import 'package:bogor/Widget/Gradient_Opacity.dart';
+import 'package:bogor/Widget/POST.dart';
+import 'package:bogor/Widget/QR_Code.dart';
+import 'package:bogor/Widget/Switch&AnimatedSwitcher.dart';
+import 'package:bogor/Widget/Tabbar.dart';
+import 'package:bogor/Widget/gestureDectetor_AnimatedContainer.dart';
+import 'package:bogor/Widget/draggable.dart';
+import 'package:bogor/Widget/card.dart';
+import 'package:bogor/Widget/opacity_card.dart';
+import 'package:bogor/Widget/sharedrefrenceshard.dart';
+import 'package:bogor/Widget/textfield.dart';
+import 'package:bogor/Widget/Hero_CliapArt.dart';
+import 'package:bogor/Widget/responsive.dart';
 import 'package:flutter/material.dart';
 
 import 'AnimatedPaddingWidget.dart';
+import 'ProviderSM.dart';
 
 class MenuUtama extends StatefulWidget {
   @override
@@ -231,6 +233,30 @@ class _MenuUtamaState extends State<MenuUtama> {
                     child: Text('Animatedpadding'),
                   ),
                 ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Sharedrefrence()));
+                    },
+                    child: Text('SharedRefrence'),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Providerstate()));
+                    },
+                    child: Text('Providerstate'),
+                  ),
+                )
               ],
             ),
           ),
@@ -294,15 +320,16 @@ class _MenuUtamaState extends State<MenuUtama> {
 
     TabBar myTapBar = TabBar(
       indicator: BoxDecoration(
-          color: Colors.green, border: Border.all(color: Colors.white)),
+          color: Color.fromRGBO(0, 0, 100, 0.5),
+          border: Border.all(color: Colors.white)),
       tabs: <Widget>[
         Tab(
           icon: Icon(Icons.comment),
-          text: 'Menu 1',
+          text: 'Fundamental Flutter 1',
         ),
         Tab(
           icon: Icon(Icons.network_cell),
-          text: 'RestFull',
+          text: 'Fundamental Flutter 2',
         ),
       ],
     );
@@ -310,41 +337,59 @@ class _MenuUtamaState extends State<MenuUtama> {
 // ISI APLIKASI
 
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    colors: [Colors.purple, Colors.blue],
-                    end: Alignment.bottomCenter)),
-          ),
-          title: Text('Dashboard'),
-          backgroundColor: Colors.orange,
-          bottom: PreferredSize(
-              preferredSize: Size.fromHeight(myTapBar.preferredSize.height),
-              child: Container(color: Colors.blue, child: myTapBar)),
-        ),
-        body: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  colors: [Colors.purple, Colors.blue],
-                  end: Alignment.bottomCenter)),
-          child: TabBarView(
-            children: <Widget>[
-              Center(
-                child: menu1,
+          length: 2,
+          child: Scaffold(
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(150),
+              child: AppBar(
+                flexibleSpace: Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          colors: [Colors.purple, Colors.blue],
+                          end: Alignment.bottomCenter)),
+                ),
+                title: Center(
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Flutter',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      'Erico Dermawan',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                )),
+                backgroundColor: Colors.orange,
+                bottom: PreferredSize(
+                    preferredSize:
+                        Size.fromHeight(myTapBar.preferredSize.height),
+                    child: Container(color: Colors.blue, child: myTapBar)),
               ),
-              Center(
-                child: restfull,
+            ),
+            body: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      colors: [Colors.purple, Colors.blue],
+                      end: Alignment.bottomCenter)),
+              child: TabBarView(
+                children: <Widget>[
+                  Center(
+                    child: menu1,
+                  ),
+                  Center(
+                    child: restfull,
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 }

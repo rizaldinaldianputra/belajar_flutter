@@ -14,22 +14,22 @@ class _AppbarPreffedState extends State<AppbarPreffed> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(200),
           child: AppBar(
-              backgroundColor: Colors.red,
-              flexibleSpace: Positioned(
-                bottom: 0,
-                right: 0,
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    margin: EdgeInsets.all(20),
-                    child: Text(
-                      'Dashboard',
-                      style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
-                    ),
+            backgroundColor: Colors.red,
+            flexibleSpace: Positioned(
+              bottom: 0,
+              right: 0,
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  child: Text(
+                    'Dashboard',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
                   ),
                 ),
-              )),
+              ),
+            ),
+          ),
         ),
       ),
     );
