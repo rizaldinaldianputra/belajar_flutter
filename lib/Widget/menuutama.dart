@@ -311,6 +311,19 @@ class _MenuUtamaState extends State<MenuUtama> {
                     child: Text('GET DATA BANYAK'),
                   ),
                 ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Providerstate()),
+                      );
+                    },
+                    child: Text('Provider State'),
+                  ),
+                ),
               ],
             ),
           ),

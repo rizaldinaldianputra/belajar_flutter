@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ApplicationColor with ChangeNotifier {
   bool _isligblue = true;
@@ -12,47 +13,55 @@ class ApplicationColor with ChangeNotifier {
   Color get color => (_isligblue) ? Colors.lightBlue : Colors.amber;
 }
 
-bool isON = false;
-
 class Providerstate extends StatelessWidget {
-  const Providerstate({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Provider State'),
-        ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              AnimatedContainer(
-                width: 100,
-                height: 100,
-                color: Colors.lightBlue,
-                margin: EdgeInsets.all(10),
-                duration: Duration(milliseconds: 500),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    child: Text('LB'),
+      home: ChangeNotifierProvider(
+        create: (context) => ApplicationColor(),
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.black,
+            title: Consumer<ApplicationColor>(
+                builder: (context, applicationColor, _) => Text(
+                      'Provider State',
+                      style: TextStyle(color: applicationColor.color),
+                    )),
+          ),
+          body: Center(
+            child: Column(
+              children: <Widget>[
+                Consumer<ApplicationColor>(
+                  builder: (context, applicationColor, _) => AnimatedContainer(
+                    width: 100,
+                    height: 100,
+                    color: applicationColor.color,
                     margin: EdgeInsets.all(10),
+                    duration: Duration(milliseconds: 500),
                   ),
-                  Switch(
-                      value: isON,
-                      onChanged: (newValue) {
-                        isON = newValue;
-                      }),
-                  Container(
-                    child: Text('Red'),
-                    margin: EdgeInsets.all(10),
-                  ),
-                ],
-              )
-            ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      child: Text('LB'),
+                      margin: EdgeInsets.all(10),
+                    ),
+                    Consumer<ApplicationColor>(
+                      builder: (context, applicationColor, _) => Switch(
+                          value: applicationColor.islightblue,
+                          onChanged: (newValue) {
+                            applicationColor.islightblue = newValue;
+                          }),
+                    ),
+                    Container(
+                      child: Text('Red'),
+                      margin: EdgeInsets.all(10),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
